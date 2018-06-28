@@ -1,22 +1,27 @@
 {
   "name": "nodejs-sum",
   "version": "0.0.1",
-  "description": "\u0016A simple update manager for Node.js apps on Windows OS",
+  "description": "A simple update manager for Electron apps on Windows OS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "\u0016https://github.com/Goliath86/nodejs-sum.git"
+    "url": "git+https://github.com/Goliath86/nodejs-sum.git"
   },
   "keywords": [
+    "update manager",
     "update",
-    "manager",
-    "electron",
-    "windows",
+    "API",
     "nodejs"
+	"electron"
+	"windows"
   ],
   "author": "Mattia Mazzon (http://www.mattiamazzon.it)",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Goliath86/nodejs-sum/issues"
+  },
+  "homepage": "https://github.com/Goliath86/nodejs-sum#readme"
 }
