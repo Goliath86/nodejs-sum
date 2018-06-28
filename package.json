@@ -14,8 +14,8 @@
     "update manager",
     "update",
     "API",
-    "nodejs"
-	"electron"
+    "nodejs",
+	"electron",
 	"windows"
   ],
   "author": "Mattia Mazzon (http://www.mattiamazzon.it)",
