@@ -23,20 +23,33 @@ const sumHelper = require('nodejs-sum');
 ```
 2. Call the function to search for available updates
 ```javascript
-const result = []; // A void array that will contain the result of the request
-const appVersion = require('../../package.json').version; // A constant with the app version readed directly from the package.json file
+const result = []; // An empty array that will contain the result of the request
+const appVersion = require('../../package.json').version; // A constant with the app version readed directly from the package.json file of the app
 
 sumHelper.checkUpdates('http://www.yoursite.it/updatesFolder/version.json', appVersion, result); // Search for updates
 ```
 where the first parameter is the url where to find the version.json file to read the version informations, the second is the current version of the app retrieved from the `package.json` file of the app or a manual inserted string with the version number and the last is an empty array that will contain the result of the request.
 
-3. Now you have to `watch` the `result` array to be fulfilled (this is necessary because all the updates request and functions are async so it is not possible to wait or block the program execution until the request is ended). If the result array will change it will contain:
-```bach
+3. Now you have to `watch` the `result` array to be fulfilled (this is necessary because all the updates requests and functions are `asynchronous` so it is not possible to wait or block the program execution until the requests and functions are ended). If the `result` array will change it will contain:
+```bash
 result = [
   0 index = Boolean -> True if an update is available - False otherwise
   1 index = String -> The new version number of the app readed from the version.json file from the update server
   2 index = String -> The app name readed from the version.json file from the update server
-  3 index = String -> present ONLY if error are throwed - String containing an error message
+  3 index = String -> present ONLY if errors are throwed - String containing an error message
+]
+```
+4. When an update is founded, you can call the other function that will download the update's zip archive inside a temporary folder (that will be deleted when the update will finish) on the current working directory of the app and will start the executable to install the update:
+```javascript
+const version = result[1]; // Store the string containing the version of the update
+const appName = result[2]; // Store the string containing the app's name
+result = []; // Empty the result array
+sumHelper.downloadUpdate('http://www.yoursite.it/updatesFolder/update_1.0.0.zip', 'update.zip', appName, version, result);
+```
+where the first parameter is the url where to download the zip archive, the second parameter is the name to assign at the downloaded zip archive on your disk, the third parameter is the name of the app, the fourth parameter is the version of the update and the last is an empty array that will contain the result of the operation:
+```bash
+result = [
+  0 index = String -> 'success' if the operations are executed correctly or an error message if errors are throwed
 ]
 ```
 5. Build your updated project. Pay attention to the `version` string inside the `package.json` file that must be correct.
