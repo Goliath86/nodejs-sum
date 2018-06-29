@@ -17,6 +17,18 @@ npm install nodejs-sum
 `adm-zip`
 
 ## USAGE
+1. Build your project. Pay attention to the `version` string inside the `package.json` file that must be correct.
+```bash
+npm run build
+*or*
+yarn run build
+```
+Import the module on your project
+```javascript
+const sumHelper = require('nodejs-sum');
+```
+
+Call the function to search for
 
 
 
