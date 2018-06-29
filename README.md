@@ -20,7 +20,9 @@ npm install nodejs-sum
 1. Build your project. Pay attention to the `version` string inside the `package.json` file that must be correct.
 ```bash
 npm run build
-*or*
+```
+or
+```bash
 yarn run build
 ```
 Import the module on your project
