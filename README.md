@@ -29,8 +29,9 @@ const appVersion = require('../../package.json').version; // A constant with the
 sumHelper.checkUpdates('http://www.yoursite.it/updatesFolder/version.json', appVersion, result); // Search for updates
 ```
 where the first parameter is the url where to find the version.json file to read the version informations, the second is the current version of the app retrieved from the `package.json` file of the app or a manual inserted string with the version number and the last is an empty array that will contain the result of the request.
+
 3. Now you have to `watch` the `result` array to be fulfilled (this is necessary because all the updates request and functions are async so it is not possible to wait or block the program execution until the request is ended). If the result array will change it will contain:
-```javascript
+```bach
 result = [
   0 index = Boolean -> True if an update is available - False otherwise
   1 index = String -> The new version number of the app readed from the version.json file from the update server
