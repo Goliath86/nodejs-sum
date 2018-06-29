@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   /** @description Check at the specified path a JSON file with the number of version of the app
    * @param {string} url where to find the version.json file with the number of version
    * @param {string} currentVersion of the app to be compared to the one finded on the version.json file on the server

@@ -1,6 +1,6 @@
 {
   "name": "nodejs-sum",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple update manager for Electron apps on Windows OS",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Goliath86/nodejs-sum/issues"
+  },
+  "dependencies": {
+	"adm-zip": "^0.4.11"
   },
   "homepage": "https://github.com/Goliath86/nodejs-sum#readme"
 }
