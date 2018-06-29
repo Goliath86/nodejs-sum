@@ -12,11 +12,11 @@ Basically it allows you to upload a *zip* archive, containing your builded updat
 npm install nodejs-sum
 ```
 
-###DEPENDENCIES
+### DEPENDENCIES
 `nodejs`
 `adm-zip`
 
-##USAGE
+## USAGE
 
 
 
